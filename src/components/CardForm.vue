@@ -1,7 +1,5 @@
 <template>
-<main>
-
-</main>
+  <section></section>
 </template>
 
 <script>
