@@ -43,10 +43,10 @@ export default new Vuex.Store({
       context.commit('incrementId');
       let newCard = {
         id: context.getters.getNextId,
-        number: 'XXXXXXXXXXXX', 
-        name: 'FIRSTNAME LASTNAME', 
-        expiry: 'MMYY',
-        vendor: 'n/a'
+        number: '', 
+        name: '', 
+        expiry: '',
+        vendor: 'vendor-bitcoin.svg'
       };
       context.commit('createCard', newCard);
     }

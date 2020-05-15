@@ -11,11 +11,11 @@
     </div>
     <div class="name-section">
       <p class="label">CARDHOLDER NAME</p>
-      <p class="name">{{card.name}}</p>
+      <p class="name">{{ccName}}</p>
     </div>
     <div class="expiry">
       <p class="label">VALID THRU</p>
-      <p class="date">{{expiry}}</p>
+      <p class="date">{{ccExpiry}}</p>
     </div>
   </article>
 </template>
@@ -27,9 +27,15 @@ export default {
   },
   computed: {
     ccNum() {
+      if(!this.card.number){return 'XXXX XXXX XXXX XXXX'}
       return this.card.number.replace(/(\w{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'');
     },
-    expiry() {
+    ccName() {
+      if(!this.card.name) {return 'FIRSTNAME LASTNAME'}
+      return this.card.name;
+    },
+    ccExpiry() {
+      if(!this.card.expiry){return 'MM/YY'}
       let expiryStr = this.card.expiry;
       let expiryArr = expiryStr.split("");
       expiryArr.splice(2,0,'/');
