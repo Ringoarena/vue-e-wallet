@@ -7,21 +7,37 @@
       <img src="../assets/vendor-bitcoin.svg" alt />
     </div>
     <div class="num">
-      <p>1234 5678 9101 1213</p>
+      <p>{{ccNum}}</p>
     </div>
     <div class="name-section">
       <p class="label">CARDHOLDER NAME</p>
-      <p class="name">MASTEN PERSSON</p>
+      <p class="name">{{card.name}}</p>
     </div>
     <div class="expiry">
       <p class="label">VALID THRU</p>
-      <p class="date">13/37</p>
+      <p class="date">{{expiry}}</p>
     </div>
   </article>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    card: Object
+  },
+  computed: {
+    ccNum() {
+      return this.card.number.replace(/(\w{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'');
+    },
+    expiry() {
+      let expiryStr = this.card.expiry;
+      let expiryArr = expiryStr.split("");
+      expiryArr.splice(2,0,'/');
+      expiryStr = expiryArr.toString();
+      return expiryStr.replace(/,/g,"");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -29,6 +45,8 @@ article {
   background: dodgerblue;
   border-radius: 10px;
   padding: 1rem;
+  min-width: 37rem;
+  min-height: 22rem;
 
   display: grid;
   grid-template-areas:
@@ -57,7 +75,7 @@ article {
       margin: 1rem 0 3rem 0;
       font-size: 3rem;
       word-spacing: 1rem;
-      letter-spacing: 0.05rem;
+      // letter-spacing: 0.2rem;
     }
   }
   .name-section {
@@ -67,8 +85,9 @@ article {
     }
     .name {
       margin: 0;
+      // margin-right: 5rem;
       font-size: 2rem;
-      word-spacing: 1rem;
+      word-spacing: 0.7rem;
     }
   }
   .expiry {

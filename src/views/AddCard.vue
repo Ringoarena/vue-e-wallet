@@ -2,7 +2,7 @@
 <main>
     <Top :title="'ADD A NEW BANK CARD'" />
     <p>NEW CARD</p>
-    <Card />
+    <Card :card="newCard" />
     <CardForm />
 </main>
 </template>
@@ -18,6 +18,19 @@ export default {
         Card,
         CardForm
     },
+    data() {
+        return {
+            card: {
+                number: '1234123412341234',
+                name: 'JÄRS GÅRDH',
+                expiry: '1337'}
+        }
+    },
+    computed: {
+        newCard() {
+            return this.$store.getters.getNewCard;
+        }
+    }
 }
 </script>
 

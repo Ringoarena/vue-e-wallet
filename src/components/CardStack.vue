@@ -1,7 +1,10 @@
 <template>
   <section>
-      <Card />
-      <Card />
+      <Card 
+        v-for="card in exampleCards"
+        :key="card.id"
+        :card="card"
+      />
   </section>
 </template>
 
@@ -11,8 +14,12 @@ import Card from '@/components/Card.vue'
 export default {
   components: {
     Card
+  },
+  computed: {
+    exampleCards() {
+      return this.$store.getters.getExampleCards;
+    }
   }
-
 }
 </script>
 
