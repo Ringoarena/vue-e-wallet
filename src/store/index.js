@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    newCard: {id: 1, number: 'XXXXXXXXXXXX', name: 'FIRSTNAME LASTNAME', expiry: 'MMYY'},
+    idCounter: 4,
+    newCard: {},
     exampleCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337'},
     exampleCards: [
       {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337'},
@@ -13,6 +14,10 @@ export default new Vuex.Store({
     ],
   },
   getters: {
+    getNextId: (state) => {
+      state.idCounter++;
+      return state.idCounter;
+    },
     getNewCard: (state) => {
       return state.newCard;
     },
@@ -24,11 +29,23 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    createCard: (state, payload) => {
+      state.newCard = payload;
+    },
     addCard: (state, payload) => {
-      state.cards.push(payload);
+      state.exampleCards.push(payload);
     }
   },
   actions: {
+    createCard: (context) => {
+      let newCard = {
+        id: context.getters.getNextId,
+        number: 'XXXXXXXXXXXX', 
+        name: 'FIRSTNAME LASTNAME', 
+        expiry: 'MMYY'
+      };
+      context.commit('createCard', newCard);
+    }
   },
   modules: {
   }

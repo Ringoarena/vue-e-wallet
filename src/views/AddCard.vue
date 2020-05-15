@@ -30,6 +30,9 @@ export default {
         newCard() {
             return this.$store.getters.getNewCard;
         }
+    },
+    beforeCreate() {
+        this.$store.dispatch('createCard');
     }
 }
 </script>
