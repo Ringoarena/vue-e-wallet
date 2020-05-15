@@ -31,8 +31,6 @@ article {
   padding: 1rem;
 
   display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: repeat(3, auto);
   grid-template-areas:
     "chip . . vendor"
     "num num num num"

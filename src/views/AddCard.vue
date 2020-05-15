@@ -18,10 +18,6 @@ export default {
         Card,
         CardForm
     },
-    data() {
-        
-    }
-
 }
 </script>
 
