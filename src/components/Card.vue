@@ -4,7 +4,8 @@
       <img src="../assets/chip-dark.svg" alt />
     </div>
     <div class="vendor">
-      <img src="../assets/vendor-bitcoin.svg" alt />
+      <!-- <img src="../assets/vendor-bitcoin.svg" alt /> -->
+      <img :src="require(`@/assets/${card.vendor}`)" alt />
     </div>
     <div class="num">
       <p>{{ccNum}}</p>
