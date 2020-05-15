@@ -70,9 +70,6 @@ article {
   }
   .num {
     grid-area: num;
-    input {
-      
-    }
   }
   .name-section {
     grid-area: name;
