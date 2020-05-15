@@ -7,10 +7,10 @@ export default new Vuex.Store({
   state: {
     idCounter: 4,
     newCard: {},
-    exampleCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337'},
+    exampleCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'n/a'},
     exampleCards: [
-      {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337'},
-      {id: 4, number: '1234123412341234', name: 'BUDDY RICHIE', expiry: '1337'},
+      {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: 'n/a'},
+      {id: 4, number: '1234123412341234', name: 'BUDDY RICHIE', expiry: '1337', vendor: 'n/a'},
     ],
   },
   getters: {
@@ -42,7 +42,8 @@ export default new Vuex.Store({
         id: context.getters.getNextId,
         number: 'XXXXXXXXXXXX', 
         name: 'FIRSTNAME LASTNAME', 
-        expiry: 'MMYY'
+        expiry: 'MMYY',
+        vendor: 'n/a'
       };
       context.commit('createCard', newCard);
     }

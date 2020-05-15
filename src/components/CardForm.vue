@@ -2,15 +2,15 @@
   <article>
     <div class="num">
       <p>CARD NUMBER</p>
-      <input type="text">
+      <input v-model="newCard.number" type="text">
     </div>
     <div class="name-section">
       <p>CARDHOLDER NAME</p>
-      <input type="text">
+      <input v-model="newCard.name" type="text">
     </div>
     <div class="expiry">
       <p>VALID THRU</p>
-      <input type="text">
+      <input v-model="newCard.expiry" type="text">
     </div>
     <div class="ccv">
       <p>CCV</p>
@@ -32,6 +32,11 @@ export default {
   methods: {
     submit() {
       this.$router.push({name: 'Home'});
+    }
+  },
+  computed: {
+    newCard() {
+      return this.$store.getters.getNewCard;
     }
   }
 
