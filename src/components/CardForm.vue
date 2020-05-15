@@ -18,7 +18,7 @@
     </div>
     <div class="vendor">
       <p>VENDOR</p>
-      <VueDropdown />
+      <VueDropdown :config="config" @setSelectedOption="handler($event)" />
     </div>
     <div class="submit">
       <button @click="submit">ADD CARD</button>
@@ -33,6 +33,20 @@ export default {
   components: {
     VueDropdown
   },
+  data() {
+    return {
+      config: {
+        options: [
+          {value: 'Bitcoin'},
+          {value: 'Blockchain'},
+          {value: 'Evil'},
+          {value: 'Ninja'}
+        ],
+        // backgroundColor: 'red'
+        border: ''
+      }
+    }
+  },
   props: {
     card: Object
   },
@@ -40,6 +54,9 @@ export default {
     submit() {
       this.$store.commit('addCard', this.card)
       this.$router.push({name: 'Home'});
+    },
+    handler(event) {
+      this.card.vendor = 'vendor-' + event.value.toLowerCase() + '.svg';
     }
   }
 }
@@ -50,6 +67,7 @@ article {
   width: 90%;
 
   margin-top: 5rem;
+  margin-bottom: 5rem;
   display: grid;
   column-gap: 2rem;
   row-gap: 2rem;
