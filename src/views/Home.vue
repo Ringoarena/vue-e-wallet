@@ -4,7 +4,7 @@
   <p>ACTIVE CARD</p>
   <Card />
   <CardStack />
-  <AddCardLink />
+  <button @click="addCard">ADD A NEW CARD</button>
 </main>
 </template>
 
@@ -12,14 +12,17 @@
 import Top from '@/components/Top.vue'
 import Card from '@/components/Card.vue'
 import CardStack from '@/components/CardStack.vue'
-import AddCardLink from '@/components/AddCardLink.vue'
 
 export default {
   components: {
     Top,
     Card,
     CardStack,
-    AddCardLink
+  },
+  methods: {
+    addCard() {
+      this.$router.push({name: 'AddCard'});
+    }
   }
 
 }
@@ -32,6 +35,15 @@ main {
   align-items: center;
   >* {
     margin: 2rem;
+  }
+  button {
+    padding: 2rem;
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: bold;
   }
 }
 </style>

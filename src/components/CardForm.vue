@@ -21,7 +21,7 @@
       <input type="text">
     </div>
     <div class="submit">
-      <button>ADD CARD</button>
+      <button @click="submit">ADD CARD</button>
     </div>
 
   </article>
@@ -29,6 +29,11 @@
 
 <script>
 export default {
+  methods: {
+    submit() {
+      this.$router.push({name: 'Home'});
+    }
+  }
 
 }
 </script>
