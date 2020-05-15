@@ -15,7 +15,6 @@ export default new Vuex.Store({
   },
   getters: {
     getNextId: (state) => {
-      state.idCounter++;
       return state.idCounter;
     },
     getNewCard: (state) => {
@@ -29,6 +28,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    incrementId: (state) => {
+      state.idCounter++;
+    },
     createCard: (state, payload) => {
       state.newCard = payload;
     },
@@ -38,6 +40,7 @@ export default new Vuex.Store({
   },
   actions: {
     createCard: (context) => {
+      context.commit('incrementId');
       let newCard = {
         id: context.getters.getNextId,
         number: 'XXXXXXXXXXXX', 

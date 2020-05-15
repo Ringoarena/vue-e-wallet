@@ -31,6 +31,7 @@
 export default {
   methods: {
     submit() {
+      this.$store.commit('addCard', this.newCard)
       this.$router.push({name: 'Home'});
     }
   },
@@ -39,7 +40,6 @@ export default {
       return this.$store.getters.getNewCard;
     }
   }
-
 }
 </script>
 
