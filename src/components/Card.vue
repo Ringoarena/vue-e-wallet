@@ -29,9 +29,6 @@ export default {
 <style lang="scss" scoped>
 article {
     background: dodgerblue;
-    width: 80vw;
-    max-width: 37rem;
-    min-height: 23rem;
     border-radius: 10px;
     padding: 1rem;
 
@@ -64,7 +61,7 @@ article {
         margin: 1rem 0 3rem 0;
         font-size: 3rem;
         word-spacing: 1rem;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05rem;
       }
     }
     .name-section {
@@ -76,7 +73,6 @@ article {
         margin: 0;
         font-size: 2rem;
         word-spacing: 1rem;
-        letter-spacing: 0.1em;
       }
     }
     .expiry {
