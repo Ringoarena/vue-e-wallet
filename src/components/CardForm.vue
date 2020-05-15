@@ -2,15 +2,15 @@
   <article>
     <div class="num">
       <p>CARD NUMBER</p>
-      <input v-model="newCard.number" type="text">
+      <input v-model="card.number" type="text">
     </div>
     <div class="name-section">
       <p>CARDHOLDER NAME</p>
-      <input v-model="newCard.name" type="text">
+      <input v-model="card.name" type="text">
     </div>
     <div class="expiry">
       <p>VALID THRU</p>
-      <input v-model="newCard.expiry" type="text">
+      <input v-model="card.expiry" type="text">
     </div>
     <div class="ccv">
       <p>CCV</p>
@@ -18,26 +18,28 @@
     </div>
     <div class="vendor">
       <p>VENDOR</p>
-      <input type="text">
+      <VueDropdown />
     </div>
     <div class="submit">
       <button @click="submit">ADD CARD</button>
     </div>
-
   </article>
 </template>
 
 <script>
+import VueDropdown from 'vue-dynamic-dropdown'
+
 export default {
+  components: {
+    VueDropdown
+  },
+  props: {
+    card: Object
+  },
   methods: {
     submit() {
-      this.$store.commit('addCard', this.newCard)
+      this.$store.commit('addCard', this.card)
       this.$router.push({name: 'Home'});
-    }
-  },
-  computed: {
-    newCard() {
-      return this.$store.getters.getNewCard;
     }
   }
 }
@@ -45,7 +47,6 @@ export default {
 
 <style lang="scss" scoped>
 article {
-  // border: 1px solid red;
   width: 90%;
 
   margin-top: 5rem;

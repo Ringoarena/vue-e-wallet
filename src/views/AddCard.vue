@@ -3,7 +3,7 @@
     <Top :title="'ADD A NEW BANK CARD'" />
     <p>NEW CARD</p>
     <Card :card="newCard" />
-    <CardForm />
+    <CardForm :card="newCard" />
 </main>
 </template>
 
