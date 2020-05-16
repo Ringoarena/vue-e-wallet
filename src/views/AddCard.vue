@@ -2,8 +2,8 @@
 <main>
     <Top :title="'ADD A NEW BANK CARD'" />
     <p>NEW CARD</p>
-    <Card :card="newCard" />
-    <CardForm :card="newCard" />
+    <Card :card="card" />
+    <CardForm :card="card" />
 </main>
 </template>
 
@@ -21,18 +21,16 @@ export default {
     data() {
         return {
             card: {
-                number: '1234123412341234',
-                name: 'JÄRS GÅRDH',
-                expiry: '1337'}
-        }
-    },
-    computed: {
-        newCard() {
-            return this.$store.getters.getNewCard;
+                id: this.$store.getters.getNextId,
+                number: '',
+                name: '',
+                expiry: '',
+                vendor: 'vendor-bitcoin.svg'
+                }
         }
     },
     beforeCreate() {
-        this.$store.dispatch('createCard');
+        this.$store.commit('incrementId');
     }
 }
 </script>

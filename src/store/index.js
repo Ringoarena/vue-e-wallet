@@ -31,25 +31,11 @@ export default new Vuex.Store({
     incrementId: (state) => {
       state.idCounter++;
     },
-    createCard: (state, payload) => {
-      state.newCard = payload;
-    },
     addCard: (state, payload) => {
       state.exampleCards.push(payload);
     }
   },
   actions: {
-    createCard: (context) => {
-      context.commit('incrementId');
-      let newCard = {
-        id: context.getters.getNextId,
-        number: '', 
-        name: '', 
-        expiry: '',
-        vendor: 'vendor-bitcoin.svg'
-      };
-      context.commit('createCard', newCard);
-    }
   },
   modules: {
   }
