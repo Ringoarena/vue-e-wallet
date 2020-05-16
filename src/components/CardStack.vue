@@ -4,6 +4,7 @@
         v-for="card in cards"
         :key="card.id"
         :card="card"
+        @click="setActive('hej')"
       />
   </section>
 </template>
@@ -15,12 +16,14 @@ export default {
   components: {
     Card
   },
-  computed: {
-    cards() {
-      return this.$store.getters.getCards;
-    }
+  props: {
+    cards: Array
   },
   methods: {
+    setActive(card) {
+      console.log(card);
+      // this.$store.commit('setActive', card);
+    }
   }
 }
 </script>

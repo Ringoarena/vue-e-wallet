@@ -28,7 +28,11 @@ export default new Vuex.Store({
       state.idCounter++;
     },
     addCard: (state, payload) => {
-      state.exampleCards.push(payload);
+      state.cards.push(payload);
+    },
+    setActive: (state, payload) => {
+      state.cards.push(state.activeCard);
+      state.activeCard = payload;
     }
   },
   actions: {

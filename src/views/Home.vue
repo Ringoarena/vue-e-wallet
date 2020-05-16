@@ -3,7 +3,7 @@
   <Top :title="'E-WALLET'"/>
   <p>ACTIVE CARD</p>
   <Card :card="activeCard" />
-  <CardStack />
+  <CardStack :cards="cards" />
   <button @click="addCard">ADD A NEW CARD</button>
 </main>
 </template>
@@ -27,6 +27,9 @@ export default {
   computed: {
         activeCard() {
           return this.$store.getters.getActiveCard;
+        },
+        cards() {
+          return this.$store.getters.getCards;
         }
     }
 
