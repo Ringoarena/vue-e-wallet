@@ -6,9 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     idCounter: 4,
-    newCard: {},
-    exampleCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'vendor-bitcoin.svg'},
-    exampleCards: [
+    activeCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'vendor-bitcoin.svg'},
+    cards: [
       {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: 'vendor-bitcoin.svg'},
       {id: 4, number: '1234123412341234', name: 'BUDDY RICHIE', expiry: '1337', vendor: 'vendor-bitcoin.svg'},
     ],
@@ -17,14 +16,11 @@ export default new Vuex.Store({
     getNextId: (state) => {
       return state.idCounter;
     },
-    getNewCard: (state) => {
-      return state.newCard;
+    getActiveCard: (state) => {
+      return state.activeCard;
     },
-    getExampleCard: (state) => {
-      return state.exampleCard;
-    },
-    getExampleCards: (state) => {
-      return state.exampleCards;
+    getCards: (state) => {
+      return state.cards;
     },
   },
   mutations: {

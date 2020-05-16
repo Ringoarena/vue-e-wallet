@@ -1,7 +1,7 @@
 <template>
   <section>
       <Card 
-        v-for="card in exampleCards"
+        v-for="card in cards"
         :key="card.id"
         :card="card"
       />
@@ -16,9 +16,11 @@ export default {
     Card
   },
   computed: {
-    exampleCards() {
-      return this.$store.getters.getExampleCards;
+    cards() {
+      return this.$store.getters.getCards;
     }
+  },
+  methods: {
   }
 }
 </script>
