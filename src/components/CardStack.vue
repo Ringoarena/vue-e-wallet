@@ -4,7 +4,6 @@
         v-for="card in cards"
         :key="card.id"
         :card="card"
-        @click="setActive('hej')"
       />
   </section>
 </template>

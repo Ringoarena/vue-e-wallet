@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article v-bind:style="{backgroundColor: card.activeColor}">
     <div class="chip">
       <img src="../assets/chip-dark.svg" alt />
     </div>
@@ -48,7 +48,6 @@ export default {
 
 <style lang="scss" scoped>
 article {
-  background: dodgerblue;
   border-radius: 10px;
   padding: 1rem;
   min-width: 37rem;

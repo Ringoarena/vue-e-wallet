@@ -25,9 +25,24 @@ export default {
                 number: '',
                 name: '',
                 expiry: '',
-                vendor: 'vendor-bitcoin.svg'
+                vendor: 'vendor-bitcoin.svg',
+                activeColor: this.generateColor()
                 }
         }
+    },
+    methods: {
+      generateColor() {
+          let random = Math.floor(Math.random() * 5);
+          console.log(random);
+          switch(random) {
+              case 0: return '#ffcccc';
+              case 1: return '#ccffcc';
+              case 2: return '#66ccff';
+              case 3: return '#ff9999';
+              case 4: return '#ffcc99';
+          }
+          return '#ff9999';
+      }
     },
     beforeCreate() {
         this.$store.commit('incrementId');
