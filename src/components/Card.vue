@@ -1,5 +1,5 @@
 <template>
-  <article v-bind:style="{backgroundColor: card.activeColor}">
+  <article @click="setActive" v-bind:style="{backgroundColor: card.activeColor}">
     <div class="chip">
       <img src="../assets/chip-dark.svg" alt />
     </div>
@@ -23,7 +23,8 @@
 <script>
 export default {
   props: {
-    card: Object
+    card: Object,
+    inStack: Boolean
   },
   computed: {
     ccNum() {
@@ -41,6 +42,14 @@ export default {
       expiryArr.splice(2,0,'/');
       expiryStr = expiryArr.toString();
       return expiryStr.replace(/,/g,"");
+    }
+  },
+  methods: {
+    setActive() {
+      if(this.inStack) {
+        this.$store.commit('setActive', this.card);
+        this.inStack = false;
+      }
     }
   }
 };

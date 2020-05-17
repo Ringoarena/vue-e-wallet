@@ -4,6 +4,7 @@
         v-for="card in cards"
         :key="card.id"
         :card="card"
+        :inStack="true"
       />
   </section>
 </template>
@@ -18,12 +19,6 @@ export default {
   props: {
     cards: Array
   },
-  methods: {
-    setActive(card) {
-      console.log(card);
-      // this.$store.commit('setActive', card);
-    }
-  }
 }
 </script>
 

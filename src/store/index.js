@@ -31,8 +31,11 @@ export default new Vuex.Store({
       state.cards.push(payload);
     },
     setActive: (state, payload) => {
-      state.cards.push(state.activeCard);
+      if(state.activeCard){
+        state.cards.push(state.activeCard);
+      }
       state.activeCard = payload;
+      state.cards = state.cards.filter(card => card != payload);
     }
   },
   actions: {
