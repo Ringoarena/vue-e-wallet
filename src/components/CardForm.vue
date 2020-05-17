@@ -2,7 +2,7 @@
   <article>
     <div class="num">
       <p>CARD NUMBER</p>
-      <input v-model="card.number" type="text">
+      <input v-model="card.number" type="number">
     </div>
     <div class="name-section">
       <p>CARDHOLDER NAME</p>
@@ -10,7 +10,7 @@
     </div>
     <div class="expiry">
       <p>VALID THRU</p>
-      <input v-model="card.expiry" type="text">
+      <input @input="inputLimiterHandler(card.expiry, 4)" v-model="card.expiry" type="number">
     </div>
     <div class="ccv">
       <p>CCV</p>
@@ -42,7 +42,6 @@ export default {
           {value: 'Evil'},
           {value: 'Ninja'}
         ],
-        // backgroundColor: 'red'
         border: ''
       }
     }
@@ -57,6 +56,13 @@ export default {
     },
     handler(event) {
       this.card.vendor = 'vendor-' + event.value.toLowerCase() + '.svg';
+    },
+    inputLimiterHandler(model, maxLength){
+      if(model.length > maxLength) {
+        console.log("model length is " + model.length)
+        model = model.slice(0,maxLength);
+        console.log("model length is " + model.length)
+      }
     }
   }
 }
@@ -86,6 +92,11 @@ article {
     border: 2px solid black;
     box-sizing: border-box;
     width: 100%;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
   }
   .num {
     grid-area: num;
