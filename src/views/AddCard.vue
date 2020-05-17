@@ -27,7 +27,7 @@ export default {
                 expiry: '',
                 vendor: 'vendor-bitcoin.svg',
                 activeColor: this.generateColor()
-                }
+            }
         }
     },
     methods: {

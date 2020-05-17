@@ -29,7 +29,20 @@ export default {
   computed: {
     ccNum() {
       if(!this.card.number){return 'XXXX XXXX XXXX XXXX'}
-      return this.card.number.replace(/(\w{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'');
+      let temp = '';
+      for(let i = 0; i < this.card.number.length; i++) {
+        let char = this.card.number.charAt(i);
+        if(Number.isInteger(parseInt(char, 10))){
+          temp += char;
+        }
+        if(temp.length == 16){
+          break;
+        }
+      }
+      while(temp.length < 16) {
+        temp += 'X';
+      }
+      return temp.replace(/(\w{4})/g, '$1 ').replace(/(^\s+|\s+$)/,'');
     },
     ccName() {
       if(!this.card.name) {return 'FIRSTNAME LASTNAME'}
