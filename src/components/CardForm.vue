@@ -10,7 +10,7 @@
     </div>
     <div class="expiry">
       <p>VALID THRU</p>
-      <input @input="inputLimiterHandler(card.expiry, 4)" v-model="card.expiry" type="number">
+      <input type="number" :value="card.expiry" @input="updateValue">
     </div>
     <div class="ccv">
       <p>CCV</p>
@@ -18,7 +18,7 @@
     </div>
     <div class="vendor">
       <p>VENDOR</p>
-      <VueDropdown :config="config" @setSelectedOption="handler($event)" />
+      <VueDropdown :config="config" @setSelectedOption="dropdownHandler($event)" />
     </div>
     <div class="submit">
       <button @click="submit">ADD CARD</button>
@@ -54,15 +54,17 @@ export default {
       this.$store.commit('addCard', this.card)
       this.$router.push({name: 'Home'});
     },
-    handler(event) {
+    dropdownHandler(event) {
       this.card.vendor = 'vendor-' + event.value.toLowerCase() + '.svg';
     },
-    inputLimiterHandler(model, maxLength){
-      if(model.length > maxLength) {
-        console.log("model length is " + model.length)
-        model = model.slice(0,maxLength);
-        console.log("model length is " + model.length)
+    updateValue(event) {
+      const value = event.target.value;
+      console.log(value,this.card.expiry);
+      if(String(value).length <= 4) {
+        console.log('entering if statement');
+        this.card.expiry = value;
       }
+      this.$forceUpdate();
     }
   }
 }
