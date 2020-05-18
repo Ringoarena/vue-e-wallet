@@ -32,14 +32,14 @@ export default {
     },
     methods: {
       generateColor() {
-          let random = Math.floor(Math.random() * 5);
-          console.log(random);
+          let random = Math.floor(Math.random() * 6);
           switch(random) {
               case 0: return '#ffcccc';
               case 1: return '#ccffcc';
               case 2: return '#66ccff';
               case 3: return '#ff9999';
               case 4: return '#ffcc99';
+              case 5: return '#4d94ff';
           }
           return '#ff9999';
       }

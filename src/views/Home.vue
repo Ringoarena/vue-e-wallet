@@ -36,21 +36,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-evenly;
-//   height: 90vw;
-//   button {
-//     padding: 2rem;
-//     width: 90%;
-//     border: 2px solid black;
-//     border-radius: 10px;
-//     background-color: white;
-//     font-size: 1rem;
-//     font-weight: bold;
-//     margin-top: 15rem;
-//   }
-// }
+main {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >p {
+    margin-top: 5rem;
+  }
+  >article {
+    margin-top: 1rem;
+  }
+  >section {
+    margin-top: 4rem;
+  }
+  button {
+    margin-top: auto;
+    width: 90vw;
+    height: 6rem;
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
 </style>

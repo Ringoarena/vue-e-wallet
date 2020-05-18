@@ -59,9 +59,7 @@ export default {
     },
     updateValue(event) {
       const value = event.target.value;
-      console.log(value,this.card.expiry);
       if(String(value).length <= 4) {
-        console.log('entering if statement');
         this.card.expiry = value;
       }
       this.$forceUpdate();
