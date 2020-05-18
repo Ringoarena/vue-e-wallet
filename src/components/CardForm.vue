@@ -2,7 +2,7 @@
   <article>
     <div class="num">
       <p>CARD NUMBER</p>
-      <input v-model="card.number" type="text">
+        <input v-model="card.number" type="text">
     </div>
     <div class="name-section">
       <p>CARDHOLDER NAME</p>
@@ -28,10 +28,12 @@
 
 <script>
 import VueDropdown from 'vue-dynamic-dropdown'
+// import ValidationProvider from 'vee-validate'
 
 export default {
   components: {
     VueDropdown,
+    // ValidationProvider
   },
   data() {
     return {
