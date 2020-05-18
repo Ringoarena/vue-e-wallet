@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 article {
-  width: 90%;
+  width: 90vw;
 
   margin-top: 5rem;
   margin-bottom: 5rem;
