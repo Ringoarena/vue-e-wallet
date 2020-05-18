@@ -2,7 +2,7 @@
   <article>
     <div class="num">
       <p>CARD NUMBER</p>
-        <input v-model="card.number" type="text">
+        <input v-model="card.number" type="number">
     </div>
     <div class="name-section">
       <p>CARDHOLDER NAME</p>
@@ -128,5 +128,4 @@ article {
     }
   }
 }
-
 </style>
