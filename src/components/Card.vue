@@ -41,6 +41,11 @@ export default {
     card: Object,
     inStack: Boolean
   },
+  data() {
+    return {
+      stackMode: this.inStack
+    }
+  },
   computed: {
     ccNum() {
       if(!this.card.number){return 'XXXX XXXX XXXX XXXX'}
@@ -74,9 +79,9 @@ export default {
   },
   methods: {
     setActive() {
-      if(this.inStack) {
+      if(this.stackMode) {
         this.$store.commit('setActive', this.card);
-        this.inStack = false;
+        this.stackMode = false;
       }
     }
   }

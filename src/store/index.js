@@ -9,7 +9,7 @@ export default new Vuex.Store({
     activeCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#66ccff'},
     cards: [
       {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ff9999'},
-      {id: 4, number: '1234123412341234', name: 'BUDDY RICHIE', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ccffcc'},
+      {id: 4, number: '1234123412341234', name: 'LARS PALMAS', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ccffcc'},
     ],
   },
   getters: {

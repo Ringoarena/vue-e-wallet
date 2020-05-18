@@ -23,5 +23,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px;
+}
 
 </style>
