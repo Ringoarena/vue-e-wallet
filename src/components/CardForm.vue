@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 article {
   width: 90vw;
-
+  max-width: 400px;
   margin-top: 5rem;
   margin-bottom: 5rem;
   display: grid;
