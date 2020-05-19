@@ -17,25 +17,25 @@ export default new Vuex.Store({
         backgroundColor: '#ffb444',
         textColor: '#000000',
         logo: 'vendor-bitcoin.svg',
-        logoColor: '#ffffff'
+        lightChip: false
       },
       ninja: {
         backgroundColor: '#343434',
         textColor: '#ffffff',
         logo: 'vendor-ninja.svg',
-        logoColor: '#000000'
+        lightChip: true
       },
       blockchain: {
         backgroundColor: '#7d4fe1',
         textColor: '#000000',
         logo: 'vendor-blockchain.svg',
-        logoColor: '#000000'
+        lightChip: true
       },
       evil: {
         backgroundColor: '#df2e4e',
         textColor: '#000000',
         logo: 'vendor-evil.svg',
-        logoColor: '#000000'
+        lightChip: true
       },
     }
   },
