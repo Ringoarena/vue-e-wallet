@@ -18,7 +18,7 @@
     </div>
     <div class="vendor">
       <p>VENDOR</p>
-      <VueDropdown :config="config" @setSelectedOption="dropdownHandler($event)" />
+      <VueDropdown :config="config" @setSelectedOption="dropdownHandler" />
     </div>
     <div class="submit">
       <button @click="submit">ADD CARD</button>

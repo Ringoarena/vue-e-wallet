@@ -18,7 +18,7 @@
       <p class="date">{{ccExpiry}}</p>
     </div>
   </article> -->
-  <article @click="setActive" v-bind:style="{backgroundColor: vendor.backgroundColor, color: vendor.textColor}">
+  <article @click="setActive" :class="{activeClass: activeMode}" v-bind:style="{backgroundColor: vendor.backgroundColor, color: vendor.textColor}">
     <div class="logos">
       <img class="chip" :src="vendor.lightChip ? require('@/assets/chip-light.svg') : require('@/assets/chip-dark.svg')" />
       <img class="vendor" :src="require('@/assets/'+vendor.logo)" />
@@ -39,7 +39,8 @@
 export default {
   props: {
     card: Object,
-    inStack: Boolean
+    inStack: Boolean,
+    activeMode: Boolean
   },
   data() {
     return {
@@ -106,6 +107,7 @@ article {
   padding: 4vw;
   box-sizing: border-box;
   font-family: "PT Mono", monospace;
+  text-shadow: -0.7px -0.7px gray;
   margin: 0 auto;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.185);
 
@@ -145,6 +147,10 @@ article {
   .data {
     font-size: 4.3vw;
     font-weight: 595;
+  }
+
+  &.activeClass {
+    text-shadow: none;
   }
 }
 @media screen and(min-width: 445px){

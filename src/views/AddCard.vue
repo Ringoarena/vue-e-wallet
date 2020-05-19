@@ -2,7 +2,7 @@
 <main>
     <Top :title="'ADD A NEW BANK CARD'" />
     <p>NEW CARD</p>
-    <Card :card="card" />
+    <Card :card="card" activeMode />
     <CardForm :card="card" />
 </main>
 </template>

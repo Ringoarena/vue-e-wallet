@@ -2,7 +2,7 @@
 <main>
   <Top :title="'E-WALLET'"/>
   <p>ACTIVE CARD</p>
-  <Card :card="activeCard" />
+  <Card :card="activeCard" activeMode />
   <CardStack :cards="cards" />
   <button @click="addCard">ADD A NEW CARD</button>
 </main>
@@ -42,7 +42,7 @@ main {
   flex-direction: column;
   align-items: center;
   >p {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   >article {
     margin-top: 1rem;

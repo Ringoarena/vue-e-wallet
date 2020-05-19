@@ -27,13 +27,13 @@ export default new Vuex.Store({
       },
       blockchain: {
         backgroundColor: '#7d4fe1',
-        textColor: '#000000',
+        textColor: '#ffffff',
         logo: 'vendor-blockchain.svg',
         lightChip: true
       },
       evil: {
         backgroundColor: '#df2e4e',
-        textColor: '#000000',
+        textColor: '#ffffff',
         logo: 'vendor-evil.svg',
         lightChip: true
       },
