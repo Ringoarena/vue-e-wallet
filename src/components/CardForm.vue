@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.commit('addCard', this.card)
+      this.$store.dispatch('addCard', this.card)
       this.$router.push({name: 'Home'});
     },
     dropdownHandler(event) {

@@ -40,9 +40,6 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getNextId: (state) => {
-      return state.idCounter;
-    },
     getActiveCard: (state) => {
       return state.activeCard;
     },
@@ -67,6 +64,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    addCard: (context, payload) => {
+      context.commit('incrementId');
+      payload.id = context.state.idCounter;
+      context.commit('addCard', payload);
+    }
   },
   modules: {
   }
