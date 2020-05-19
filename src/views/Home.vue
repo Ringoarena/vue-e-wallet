@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  height: 95vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,6 +53,7 @@ main {
   button {
     margin-top: auto;
     width: 90vw;
+    max-width: 400px;
     height: 6rem;
     border: 2px solid black;
     border-radius: 7px;

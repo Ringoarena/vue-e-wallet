@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import VueDropdown from 'vue-dynamic-dropdown'
-// import ValidationProvider from 'vee-validate'
+import VueDropdown from 'vue-dynamic-dropdown';
+// import ValidationProvider from 'vee-validate';
 
 export default {
   components: {
