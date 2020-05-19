@@ -44,9 +44,9 @@ export default {
           return '#ff9999';
       }
     },
-    // beforeCreate() {
-    //     this.$store.commit('incrementId');
-    // }
+    beforeCreate() {
+        this.$store.commit('incrementId');
+    }
 }
 </script>
 

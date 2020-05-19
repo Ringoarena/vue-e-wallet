@@ -48,7 +48,6 @@ export default {
   },
   computed: {
     ccNum() {
-      // if(!this.card.number){return 'XXXX XXXX XXXX XXXX'}
       let temp = '';
       for(let i = 0; i < this.card.number.length; i++) {
         let char = this.card.number.charAt(i);

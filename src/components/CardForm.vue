@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.commit('incrementId');
       this.$store.commit('addCard', this.card)
       this.$router.push({name: 'Home'});
     },

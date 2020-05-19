@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    idCounter: 5,
+    idCounter: 4,
     activeCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#66ccff'},
     cards: [
       {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ff9999'},
