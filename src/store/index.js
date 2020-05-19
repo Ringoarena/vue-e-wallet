@@ -63,6 +63,7 @@ export default new Vuex.Store({
       }
       state.activeCard = payload;
       state.cards = state.cards.filter(card => card != payload);
+      state.cards.filter((card, index, arr) => index >= arr.length-3)
     }
   },
   actions: {
