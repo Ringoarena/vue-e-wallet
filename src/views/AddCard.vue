@@ -25,7 +25,7 @@ export default {
                 number: '',
                 name: '',
                 expiry: '',
-                vendor: 'vendor-bitcoin.svg',
+                vendor: 'bitcoin',
                 activeColor: this.generateColor()
             }
         }

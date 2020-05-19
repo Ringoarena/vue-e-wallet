@@ -6,11 +6,38 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     idCounter: 4,
-    activeCard: {id: 2, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#66ccff'},
+    activeCard: {id: 1, number: '1234123412341234', name: 'MASTEN PERSSON', expiry: '1337', vendor: "bitcoin"},
     cards: [
-      {id: 3, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ff9999'},
-      {id: 4, number: '1234123412341234', name: 'LARS PALMAS', expiry: '1337', vendor: 'vendor-bitcoin.svg', activeColor : '#ccffcc'},
+      {id: 2, number: '1234123412341234', name: 'JÄRS GÅRDH', expiry: '1337', vendor: "ninja"},
+      {id: 3, number: '1234123412341234', name: 'Gerard Boré', expiry: '1337', vendor: "blockchain"},
+      {id: 4, number: '1234123412341234', name: 'LARS PALMAS', expiry: '1337', vendor: "evil"},
     ],
+    vendors: {
+      bitcoin: {
+        backgroundColor: '#ffb444',
+        textColor: '#000000',
+        logo: 'vendor-bitcoin.svg',
+        logoColor: '#ffffff'
+      },
+      ninja: {
+        backgroundColor: '#343434',
+        textColor: '#ffffff',
+        logo: 'vendor-ninja.svg',
+        logoColor: '#000000'
+      },
+      blockchain: {
+        backgroundColor: '#7d4fe1',
+        textColor: '#000000',
+        logo: 'vendor-blockchain.svg',
+        logoColor: '#000000'
+      },
+      evil: {
+        backgroundColor: '#df2e4e',
+        textColor: '#000000',
+        logo: 'vendor-evil.svg',
+        logoColor: '#000000'
+      },
+    }
   },
   getters: {
     getNextId: (state) => {

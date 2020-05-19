@@ -18,10 +18,10 @@
       <p class="date">{{ccExpiry}}</p>
     </div>
   </article> -->
-  <article @click="setActive" v-bind:style="{backgroundColor: card.activeColor}">
+  <article @click="setActive" v-bind:style="{backgroundColor: vendor.backgroundColor, color: vendor.textColor}">
     <div class="logos">
-      <img class="chip" src="../assets/chip-dark.svg" alt />
-      <img class="vendor" :src="require(`@/assets/${card.vendor}`)" alt />
+      <img class="chip" src="@/assets/chip-dark.svg" />
+      <img class="vendor" :src="require('@/assets/'+vendor.logo)" />
     </div>
     <p class="num">{{ccNum}}</p>
     <div class="label-wrapper">
@@ -43,10 +43,13 @@ export default {
   },
   data() {
     return {
-      stackMode: this.inStack
+      stackMode: this.inStack,
     }
   },
   computed: {
+    vendor() {
+      return this.$store.state.vendors[this.card.vendor];
+    },
     ccNum() {
       let temp = '';
       for(let i = 0; i < this.card.number.length; i++) {

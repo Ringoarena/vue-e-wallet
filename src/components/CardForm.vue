@@ -57,7 +57,7 @@ export default {
       this.$router.push({name: 'Home'});
     },
     dropdownHandler(event) {
-      this.card.vendor = 'vendor-' + event.value.toLowerCase() + '.svg';
+      this.card.vendor = event.value.toLowerCase();
     },
     updateValue(event) {
       const value = event.target.value;
